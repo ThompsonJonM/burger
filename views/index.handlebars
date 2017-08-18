@@ -1,9 +1,25 @@
-<h1>Eat Da Burger!</h1>
-
 <main>
     <div class="container">
         <div class="row">
             <div class="col s6 m6 l6">
+                <img class="bobsBurger" src="/assets/img/bobsBurger.jpg" width="300px">
+            </div>
+
+            <div class="col s6 m6 l6">
+                <h2 class="add center">Add a Burger!</h2>
+                <form action="/burgers/new" method="POST">
+                    <input type="text" id="name" name="burger_name" placeholder="Enter a Burger Name">
+                    <button type="submit" class="addBurger">Add your Burger!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <h2 class="header center">Now Eat Da Burger!</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s6 m6 l6 center">
                 {{#each burgers}}
                     {{#unless this.devoured}}
                         <div>
@@ -15,7 +31,7 @@
                 {{/each}}
             </div>
 
-            <div class="col s6 m6 l6">
+            <div class="col s6 m6 l6 center">
                 {{#each burgers}}
                     {{#if this.devoured}}
                         <div class="burgerDevoured">
@@ -29,14 +45,3 @@
         </div>
     </div>
 </main>
-
-<h2>Add a Burger!</h2>
-
-<div class="row">
-    <div class="col s6 m6 l6">
-        <form action="/burgers/new" method="POST">
-            <input type="text" id="name" name="burger_name" placeholder="Enter a Burger Name">
-            <button type="submit" class="addBurger">Add your Burger!</button>
-        </form>
-    </div>
-</div>
