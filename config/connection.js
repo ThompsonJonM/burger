@@ -5,16 +5,16 @@ var mysql = require('mysql');
 var connection;
 
 // Jaws DB since using heroku deploy
-if(process.env.JAWSDB_URL) {
+if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-    connection = mysql.createConnection({
-        port: 3036,
+    connection = mysql.createConnection ({
         host: 'localhost',
+        port: 3306,
         user: 'root',
         password: 'root',
-        database: 'burgers_db'
-    })
+        database: 'burgers_db',
+    });
 };
 
 connection.connect(function(err) {

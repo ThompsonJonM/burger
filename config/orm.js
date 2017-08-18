@@ -33,7 +33,7 @@ var orm = {
     },
 
     // Create function
-    insertOne: function(table, col, vals, cb) {
+    insertOne: function(table, cols, vals, cb) {
         var queryString = 'insert into ' + table;
 
         queryString += ' (';
@@ -59,6 +59,8 @@ var orm = {
         queryString += objToSql(objColVals);
         queryString += ' where ';
         queryString += condition;
+
+        console.log(queryString);
 
         connection.query(queryString, function(err, res) {
             if (err) throw err;
