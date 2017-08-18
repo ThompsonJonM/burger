@@ -52,11 +52,11 @@ var orm = {
     },
 
     // Update function
-    updateOne: function(table, condition, cb) {
+    updateOne: function(table, objColVals, condition, cb) {
         var queryString = 'update ' + table;
 
         queryString += ' set ';
-        queryString += 'devoured = true';
+        queryString += objToSql(objColVals);
         queryString += ' where ';
         queryString += condition;
 
@@ -66,7 +66,7 @@ var orm = {
             if (err) throw err;
             cb(res);
         });
-    }
+    },
 };
 
 module.exports = orm;

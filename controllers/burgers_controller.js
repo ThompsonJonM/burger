@@ -11,9 +11,9 @@ router.get('/', function(req, res) {
 
 router.get('/burgers', function(req, res) {
     burgers.selectAll(function(data) {
-        var burgerTable = {burgers: data};
+        var hbsObject = {burgers: data};
 
-        res.render('index', burgerTable);
+        res.render('index', hbsObject);
     });
 });
 
@@ -24,11 +24,11 @@ router.post('/burgers/new', function(req, res) {
 });
 
 router.put('/burgers/update/:id', function(req, res) {
-    var id = req.params.id;
+    var condition = 'id = ' + req.params.id;
 
-    burgers.updateOne(id), function(data) {
+    burgers.updateOne({devoured: true}, condition, function(data) {
         res.redirect('/burgers')
-    };
+    });
 });
 
 module.exports = router;
