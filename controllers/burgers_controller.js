@@ -26,17 +26,9 @@ router.post('/burgers/new', function(req, res) {
 router.put('/burgers/update/:id', function(req, res) {
     var id = req.params.id;
 
-    burgers.updateOne({devoured: true}, id, function(data) {
+    burgers.updateOne(id), function(data) {
         res.redirect('/burgers')
-    });
-});
-
-router.delete('/burgers/delete/:burger_name', function(req, res) {
-    var condition = 'burger_name = ' + req.body.burger_name;
-
-    burgers.deleteOne(condition, function(data) {
-        res.redirect('/burgers')
-    });
+    };
 });
 
 module.exports = router;

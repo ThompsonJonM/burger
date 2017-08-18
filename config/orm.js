@@ -52,27 +52,15 @@ var orm = {
     },
 
     // Update function
-    updateOne: function(table, objColVals, condition, cb) {
+    updateOne: function(table, condition, cb) {
         var queryString = 'update ' + table;
 
         queryString += ' set ';
-        queryString += objToSql(objColVals);
+        queryString += 'devoured = true';
         queryString += ' where ';
         queryString += condition;
 
         console.log(queryString);
-
-        connection.query(queryString, function(err, res) {
-            if (err) throw err;
-            cb(res);
-        });
-    },
-
-    deleteOne: function(table, condition, cb) {
-        var queryString = 'delete from ' + table;
-
-        queryString += ' where ';
-        queryString += condition;
 
         connection.query(queryString, function(err, res) {
             if (err) throw err;
