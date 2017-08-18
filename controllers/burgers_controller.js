@@ -31,8 +31,8 @@ router.put('/burgers/update/:id', function(req, res) {
     });
 });
 
-router.delete('/burgers/delete/:id', function(req, res) {
-    var condition = 'id = ' + req.params.id;
+router.delete('/burgers/delete/:burger_name', function(req, res) {
+    var condition = 'burger_name = ' + req.body.burgerDelete;
 
     burgers.deleteOne(condition, function(data) {
         res.redirect('/burgers')
