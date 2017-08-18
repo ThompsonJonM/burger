@@ -64,6 +64,18 @@ var orm = {
             if (err) throw err;
             cb(res);
         });
+    },
+
+    deleteOne: function(table, condition, cb) {
+        var queryString = 'delete from ' + table;
+
+        queryString += ' where ';
+        queryString += condition;
+
+        connection.query(queryString, function(err, res) {
+            if (err) throw err;
+            cb(res);
+        });
     }
 };
 
