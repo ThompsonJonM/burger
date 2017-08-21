@@ -1,0 +1,50 @@
+/*Styling*/
+
+/*Global  */
+* {
+	box-sizing: border-box;
+}
+
+main {
+    background-color: #d8c9aa;
+}
+
+button {
+    background-color: #3f5c98 !important;
+}
+
+/*Classes  */
+.jumbotron, .header {
+    background-color: yellow;
+    border-style: solid;
+    border-color: red !important;
+    border-width: 15px;
+    border-radius: 10px;
+}
+
+.pageTitle, .header {
+    color: red;
+}
+
+.bobsBurger {
+    mix-blend-mode: multiply;
+}
+
+.addBox {
+    margin-top: 70px;
+}
+
+.header {
+    padding: 10px;
+}
+
+.burgerDevoured {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+/*Individual IDs  */
+#burgerReadyToEat {
+    margin-top: 5px !important;
+    width: 75%;
+}
