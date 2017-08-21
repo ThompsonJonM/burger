@@ -11,10 +11,13 @@
     "url": "git+https://github.com/ThompsonJonM/burger.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jonathan Thompson",
+  "license": "NU Bootcamp",
   "bugs": {
     "url": "https://github.com/ThompsonJonM/burger/issues"
+  },
+  "engines" :{
+    "node": "6.10.2"
   },
   "homepage": "https://github.com/ThompsonJonM/burger#readme",
   "dependencies": {
